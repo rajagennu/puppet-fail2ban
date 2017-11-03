@@ -9,9 +9,10 @@ class fail2ban::service (
 ) {
 
     service { '$service_name': 
-      ensure => $service_ensure,
-      enable => $service_enable,
+      ensure     => $service_ensure,
+      name       => $service_name,
+      enable     => $service_enable,
       hasrestart => $service_hasrestart,
-      hasstatus => $service_hasstatus, 
+      hasstatus  => $service_hasstatus, 
        }
 }
