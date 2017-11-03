@@ -12,7 +12,7 @@ String $config_jail_path = $::fail2ban::config_jail_path,
 file { 'Fail2ban configuration file':
       ensure => $config_ensure,
       path => $config_path,
-      content => file('fail2ban/fail2ban/fail2ban.local'),
+      source => 'puppet:///modules/fail2ban/fail2ban/fail2ban.local',
       owner => $config_owner,
       group => $config_group,
       mode => $config_mode,
