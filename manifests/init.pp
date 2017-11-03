@@ -1,48 +1,19 @@
-# Class: fail2ban
-# ===========================
-#
-# Full description of class fail2ban here.
-#
-# Parameters
-# ----------
-#
-# Document parameters here.
-#
-# * `sample parameter`
-# Explanation of what this parameter affects and what it defaults to.
-# e.g. "Specify one or more upstream ntp servers as an array."
-#
-# Variables
-# ----------
-#
-# Here you should define a list of variables that this module would require.
-#
-# * `sample variable`
-#  Explanation of how this variable affects the function of this class and if
-#  it has a default. e.g. "The parameter enc_ntp_servers must be set by the
-#  External Node Classifier as a comma separated list of hostnames." (Note,
-#  global variables should be avoided in favor of class parameters as
-#  of Puppet 2.6.)
-#
-# Examples
-# --------
-#
-# @example
-#    class { 'fail2ban':
-#      servers => [ 'pool.ntp.org', 'ntp.local.company.com' ],
-#    }
-#
-# Authors
-# -------
-#
-# Author Name <author@domain.com>
-#
-# Copyright
-# ---------
-#
-# Copyright 2017 Your name here, unless otherwise noted.
-#
-class fail2ban {
-
-
+class fail2ban (
+    String $ensure = $::fail2ban::params::ensure,
+    String $package_name = $::fail2ban::params::package_name,
+    String $config_path = $::fail2ban::params::config_path,
+    String $config_jail_path = $::fail2ban::params::config_jail_path,
+    String $config_ensure =  $::fail2ban::params::config_ensure,
+    String $config_mode = $::fail2ban::params::config_mode,
+    String $config_owner = $::fail2ban::params::config_owner,
+    String $config_group = $::fail2ban::params::config_group,
+    String $service_name = $::fail2ban::params::service_name,
+    String $service_ensure = $::fail2ban::params::service_ensure,
+    String $service_enable = $::fail2ban::params::service_enable,
+    String $service_hasstatus = $::fail2ban::params::service_hasstatus,
+    String $service_hasrestart = $::fail2ban::params::$service_hasrestart,
+) inherits ::fail2ban::params {
+class { '::fail2ban::install':}
+    -> class { '::fail2ban::config': }
+    ~> class { '::fail2ban::service': } 
 }
