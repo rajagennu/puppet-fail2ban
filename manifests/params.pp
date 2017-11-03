@@ -1,6 +1,6 @@
 class fail2ban::params {
     $ensure            = 'present'
-    $package_name      = 'fail2ban'
+    $package_name      = 'fail2ban-all'
     $config_path        = '/etc/fail2ban/fail2ban.local'
     $config_jail_path = '/etc/fail2ban/jail.local'
     $config_ensure      = 'file'
