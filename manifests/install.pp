@@ -6,5 +6,6 @@ class fail2ban::install (
  
  package { '$package_name':
      ensure => $ensure,
+     name   => $package_name,
      }
  }
