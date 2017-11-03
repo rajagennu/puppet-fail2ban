@@ -1,0 +1,15 @@
+{
+  "name": "raja-fail2ban",
+  "version": "0.1.0",
+  "author": "raja",
+  "summary": "Fail2Ban installation & configuration via Puppet",
+  "license": "Apache-2.0",
+  "source": "git@github.com:rajagennu/puppet-fail2ban.git",
+  "project_page": "git@github.com:rajagennu/puppet-fail2ban.git",
+  "issues_url": "https://github.com/rajagennu/puppet-fail2ban/issues",
+  "dependencies": [
+    {"name":"puppetlabs-stdlib","version_requirement":">= 1.0.0"}
+  ],
+  "data_provider": null
+}
+
