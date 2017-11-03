@@ -20,7 +20,7 @@ file { 'Fail2ban configuration file':
 file { 'jail.local configuration file':
       ensure => $config_ensure,
       path => $config_jail_path,
-      content => file('fail2ban/fail2ban/jail.local'),
+      source => 'puppet:///modules/fail2ban/fail2ban/jail.local',
       owner => $config_owner,
       group => $config_group,
       mode => $config_mode,
