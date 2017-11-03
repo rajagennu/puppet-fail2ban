@@ -9,9 +9,9 @@ class fail2ban (
     String $config_group = $::fail2ban::params::config_group,
     String $service_name = $::fail2ban::params::service_name,
     String $service_ensure = $::fail2ban::params::service_ensure,
-    String $service_enable = $::fail2ban::params::service_enable,
-    String $service_hasstatus = $::fail2ban::params::service_hasstatus,
-    String $service_hasrestart = $::fail2ban::params::service_hasrestart,
+    Boolean $service_enable = $::fail2ban::params::service_enable,
+    Boolean $service_hasstatus = $::fail2ban::params::service_hasstatus,
+    Boolean $service_hasrestart = $::fail2ban::params::service_hasrestart,
 ) inherits ::fail2ban::params {
 class { '::fail2ban::install':}
     -> class { '::fail2ban::config': }
